@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- name:类的全路径:-->
+    <!-- table:表的名称:(可以省略的.使用类的名称作为表名.)-->
+    <class name="com.zhaojie.Entity.Score" table="score">
+        <!-- 主键-->
+        <id name="id" column="id">
+            <!--主键生成策略-->
+<!--            <generator class="native"></generator>-->
+        </id>
+        <!--type:三种写法-->
+        <!--Java类型 :java.lang.String-->
+        <!--Hibernate类型:string-->
+        <!--SQL类型 :不能直接使用type属性,需要子标签<column>-->
+        <!--<column name="name" sql-type="varchar(20)"/>-->
+        <property name="name" column="name" type="java.lang.String"/>
+        <property name="subject" column="subject" type="java.lang.String"/>
+        <property name="score" column="score" type="java.lang.Integer"/>
+        <property name="locationId" column="location_id" type="java.lang.Integer"/>
+
+<!--        配置mapping映射文件-->
+    </class>
+</hibernate-mapping>
